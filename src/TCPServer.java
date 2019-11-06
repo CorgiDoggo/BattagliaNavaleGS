@@ -33,7 +33,7 @@ import java.net.*;
 				new InputStreamReader(System.in));
 		//create the board
 		
-		board gameBoard = new board();
+		boardS gameBoard = new boardS();
 		
 		//player is asked to add the ships to the board
 		System.out.println("Below you can input where you want to" +
@@ -65,7 +65,7 @@ import java.net.*;
 				break;
 		}
 		
-		gameBoard.printBoard();
+		gameBoard.printBoardS();
 		////////////////////////////////////
 		//game starts
 		////////////////////////////////////

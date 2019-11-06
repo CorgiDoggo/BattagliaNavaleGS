@@ -1,21 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author informatica
- */
-public class board {
-	public int[][] board;
+public class boardC {
+	public int[][] boardC;
 	//this will hold info if the boat can be created
 	public boolean boatBool;
 	public boolean loss = true;
 	public String  str;
-	public board(){
-		board = new int[10][10];
+	public boardC(){
+		boardC = new int[10][10];
 	}
 	public void testPos(int a, int b){
 		int row1 = Math.abs(a/10);
@@ -43,12 +33,12 @@ public class board {
 			//if the boat is on the same row we have to fill the 
 			//columns out
 			for(int i = col1; i<=col2; i++){
-				board[row1-1][i-1] = 1;
+				boardC[row1-1][i-1] = 1;
 			}
 		}
 		else if(col1 == col2){
 			for(int i = row1; i<=row2; i++){
-				board[i-1][col1-1] = 1;
+				boardC[i-1][col1-1] = 1;
 			}
 		}
 		else{
@@ -56,18 +46,18 @@ public class board {
 		}
 	}
 	//printing the board
-	public void printBoard(){
-		for(int i = 0; i<board.length; i++){
-			for(int c = 0; c<board[i].length; c++){
-				System.out.print(board[i][c]+" ");
+	public void printBoardC(){
+		for(int i = 0; i<boardC.length; i++){
+			for(int c = 0; c<boardC[i].length; c++){
+				System.out.print(boardC[i][c]+" ");
 			}
 			System.out.println();
 		}
 	}
 	public boolean testHit(int row, int col){
-		if(board[row][col] == 1){
-			board[row][col] = 5;
-			printBoard();
+		if(boardC[row][col] == 1){
+			boardC[row][col] = 5;
+			printBoardC();
 			return true;
 		}
 		else 
@@ -77,9 +67,9 @@ public class board {
 	public boolean testLoss(){
 		int count = 0;
 		boolean bool1 = true;
-		for(int i = 0; i<board.length; i++){
-			for(int c = 0; c<board[i].length; c++){
-				if(board[i][c]==0 || board[i][c]==5){
+		for(int i = 0; i<boardC.length; i++){
+			for(int c = 0; c<boardC[i].length; c++){
+				if(boardC[i][c]==0 || boardC[i][c]==5){
 					count++;
 				}				
 			}
